@@ -1,8 +1,10 @@
 .PHONY: build
 
-export PATH := /usr/local/Cellar/qt/current/bin:$(PATH)
 QT_BASE = /usr/local/Cellar/qt/$(shell ls /usr/local/Cellar/qt|sort -rn|head -n1)
 QT_BASE_ESCAPED = $(shell echo $(QT_BASE)|sed 's/\//\\\//g')
+
+export PATH := $(QT_BASE)/bin:$(PATH)
+
 FRAMEWORKS = QtCore.framework QtGui.framework QtNetwork.framework QtPrintSupport.framework QtRepParser.framework QtSvg.framework QtUiPlugin.framework QtWidgets.framework
 SDKVER = $(shell sw_vers|grep 'ProductVersion'|awk '{print $$2}'|awk -F'.' '{print $$1"."$$2}')
 
