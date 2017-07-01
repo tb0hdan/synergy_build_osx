@@ -8,7 +8,7 @@ export PATH := $(QT_BASE)/bin:$(PATH)
 FRAMEWORKS = QtCore.framework QtGui.framework QtNetwork.framework QtPrintSupport.framework QtRepParser.framework QtSvg.framework QtUiPlugin.framework QtWidgets.framework
 SDKVER = $(shell sw_vers|grep 'ProductVersion'|awk '{print $$2}'|awk -F'.' '{print $$1"."$$2}')
 
-all: checkout deps patch qt_symlinks config clean build dist
+all: checkout patch qt_symlinks config clean build dist
 
 checkout:
 	@if [ -d synergy ]; then \

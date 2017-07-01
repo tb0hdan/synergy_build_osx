@@ -4,4 +4,5 @@ before_install:
   - brew update
   - brew upgrade
 install:
+  - make deps
   - make
