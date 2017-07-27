@@ -27,7 +27,7 @@ patch:
 
 
 qt_symlinks:
-	@for framework in $(FRAMEWORKS); do cd $(QT_BASE)/lib/$$framework; if [ ! -d Contents ]; then mkdir Contents; ln -s ./Resources/Info.plist Contents/Info.plist; fi; done
+	@for framework in $(FRAMEWORKS); do cd $(QT_BASE)/lib/$$framework; if [ ! -d Contents ]; then mkdir Contents; ln -s ../Resources/Info.plist Contents/Info.plist; fi; done
 
 config:
 	@cd synergy; ./hm.sh conf -g2 --mac-sdk $(SDKVER) --mac-identity test
